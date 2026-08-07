@@ -506,6 +506,8 @@ h4, .h4 {
   padding: 40px;
   transition: all var(--duration) var(--ease);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .sector-card::before {
   content: '';
@@ -561,6 +563,21 @@ h4, .h4 {
   font-size: 15px;
   line-height: 1.65;
   color: var(--text-muted);
+  flex: 1;
+}
+.sector-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-text);
+  margin-top: 20px;
+  transition: gap var(--duration) var(--ease);
+}
+.sector-card:hover .sector-card__link {
+  gap: 12px;
+  color: var(--gold);
 }
 
 /* Subsidiary Cards */
