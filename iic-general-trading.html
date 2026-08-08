@@ -143,18 +143,22 @@
       line-height: 1.75;
       margin-bottom: 12px;
     }
+    .chairman__left {
+      text-align: center;
+    }
     .chairman__name {
       font-family: var(--font-primary);
       font-weight: 700;
       color: var(--text-dark);
       font-size: 16px;
-      margin-top: 20px;
+      margin-top: 16px;
     }
     .chairman__role {
       font-family: var(--font-data);
       font-size: 13px;
       color: var(--gold-text);
       letter-spacing: 0.05em;
+      margin-top: 2px;
     }
 
     /* About / Who We Are */
@@ -604,7 +608,7 @@
       .trading-hero__logo-img { max-width: 240px; }
       .trading-hero__buttons { flex-direction: column; }
       .chairman { grid-template-columns: 1fr; gap: 32px; }
-      .chairman__photo { max-width: 200px; }
+      .chairman__left { max-width: 200px; }
       .trading-about { grid-template-columns: 1fr; gap: 32px; }
       .group-stats { grid-template-columns: repeat(2, 1fr); }
       .trading-vm { grid-template-columns: 1fr; }
@@ -714,8 +718,12 @@
   <section id="chairman" class="section section--dark">
     <div class="container">
       <div class="chairman">
-        <div class="chairman__photo reveal">
-          <img src="Media/IIC General Trading/chairman.jpg" alt="Dato Dr. Arshad Mahmood" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Dato Dr. Arshad Mahmood<br>Group Chairman</span>';">
+        <div class="chairman__left reveal">
+          <div class="chairman__photo">
+            <img src="Media/IIC General Trading/chairman.jpg" alt="Dato Dr. Arshad Mahmood" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Dato Dr. Arshad Mahmood<br>Group Chairman</span>';">
+          </div>
+          <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
+          <div class="chairman__role">Group Chairman, IIC Worldwide</div>
         </div>
         <div class="chairman__text reveal reveal-delay-1">
           <span class="eyebrow">Chairman&rsquo;s Message</span>
@@ -723,8 +731,6 @@
           <blockquote>&ldquo;At IIC General Trading, we believe that international trade is more than just the movement of goods &mdash; it is the foundation of economic growth, development, and global connectivity. Our mission is to bridge markets, build lasting partnerships, and deliver value across every transaction.&rdquo;</blockquote>
           <p>Since the founding of IIC General Trading, we have remained committed to our core principles of integrity, reliability, and professionalism. We have built a company that our partners and clients trust to deliver consistent results, even in the most complex and challenging market conditions.</p>
           <p>As we continue to expand our global reach, we remain focused on creating sustainable trading relationships that benefit all stakeholders &mdash; from producers and suppliers to buyers and end consumers.</p>
-          <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
-          <div class="chairman__role">Group Chairman, IIC Worldwide</div>
         </div>
       </div>
     </div>
@@ -800,7 +806,7 @@
       <div class="portfolio-cards">
         <a href="sector-food-security.html" class="portfolio-card reveal">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8c-4 4-6 10-4 16 2 6 8 10 14 10s10-4 10-8c0-6-8-8-12-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 34v8M16 42h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 8c0 8-6 14-10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 44V24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c-3-5-10-10-16-8 2 8 8 12 16 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 16c3-5 10-10 16-8-2 8-8 12-16 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 8c-2-4-6-5-10-4 1 5 5 8 10 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="portfolio-card__title">Food Security</h3>
           <p class="portfolio-card__items">Sugar, Rice, Wheat, Corn, Soybeans, Cooking Oil, Pulses</p>
@@ -814,14 +820,14 @@
         </a>
         <a href="sector-fertilizers.html" class="portfolio-card reveal reveal-delay-2">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 20c-6-2-12 2-12 8h24c0-6-6-10-12-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 28c0 4 2 8 6 12M30 28c0 4-2 8-6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="14" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="26" cy="10" r="3" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="16" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="24" r="3" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="22" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="24" r="3" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="34" r="3" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="32" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="34" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="42" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="42" r="3" stroke="currentColor" stroke-width="2"/></svg>
           </div>
           <h3 class="portfolio-card__title">Fertilizers</h3>
           <p class="portfolio-card__items">Urea, Sulphur, DAP, MAP, NPK Compounds</p>
         </a>
         <a href="sector-metals.html" class="portfolio-card reveal">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l-4 8h-10l-4 8 6 8-2 12h20l-2-12 6-8-4-8h-10l-4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 28h8M22 32h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 32l6-20h20l6 20H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 32h32v6H8v-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 20h12M16 26h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3 class="portfolio-card__title">Metals &amp; Precious Commodities</h3>
           <p class="portfolio-card__items">Gold Dor&eacute; Bars, Diamonds, Copper Cathodes, Industrial Metals</p>
