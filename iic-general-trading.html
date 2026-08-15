@@ -1053,41 +1053,49 @@
         </div>
         <div class="trading-contact__form reveal reveal-delay-1">
           <h3>Send Us a Message</h3>
-          <div class="trading-form-row">
-            <div class="trading-form-group">
-              <label for="trading-fname">First Name</label>
-              <input type="text" id="trading-fname" placeholder="Your first name">
+          <form id="trading-contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4fe20099-f197-49d3-88ae-f0e1021a67f2">
+            <input type="hidden" name="subject" value="New Contact Form Submission — IIC General Trading">
+            <input type="hidden" name="from_name" value="IIC General Trading Contact Form">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" style="display:none;">
+            <div class="trading-form-row">
+              <div class="trading-form-group">
+                <label for="trading-fname">First Name</label>
+                <input type="text" id="trading-fname" name="first-name" placeholder="Your first name" required>
+              </div>
+              <div class="trading-form-group">
+                <label for="trading-lname">Last Name</label>
+                <input type="text" id="trading-lname" name="last-name" placeholder="Your last name" required>
+              </div>
             </div>
             <div class="trading-form-group">
-              <label for="trading-lname">Last Name</label>
-              <input type="text" id="trading-lname" placeholder="Your last name">
+              <label for="trading-email">Email Address</label>
+              <input type="email" id="trading-email" name="email" placeholder="your@email.com" required>
             </div>
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-email">Email Address</label>
-            <input type="email" id="trading-email" placeholder="your@email.com">
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-company">Company / Organisation</label>
-            <input type="text" id="trading-company" placeholder="Your company name">
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-subject">Subject</label>
-            <select id="trading-subject">
-              <option value="" disabled selected>Select a topic</option>
-              <option value="sourcing">Global Sourcing</option>
-              <option value="trading">International Trading</option>
-              <option value="supply-chain">Supply Chain Solutions</option>
-              <option value="commodity">Commodity Inquiry</option>
-              <option value="partnership">Partnership Opportunity</option>
-              <option value="general">General Inquiry</option>
-            </select>
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-message">Message</label>
-            <textarea id="trading-message" placeholder="Tell us about your requirements..."></textarea>
-          </div>
-          <button type="button" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div class="trading-form-group">
+              <label for="trading-company">Company / Organisation</label>
+              <input type="text" id="trading-company" name="company" placeholder="Your company name">
+            </div>
+            <div class="trading-form-group">
+              <label for="trading-subject">Subject</label>
+              <select id="trading-subject" name="subject-field" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Global Sourcing">Global Sourcing</option>
+                <option value="International Trading">International Trading</option>
+                <option value="Supply Chain Solutions">Supply Chain Solutions</option>
+                <option value="Commodity Inquiry">Commodity Inquiry</option>
+                <option value="Partnership Opportunity">Partnership Opportunity</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div class="trading-form-group">
+              <label for="trading-message">Message</label>
+              <textarea id="trading-message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+            <button type="submit" id="trading-submit-btn" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div id="trading-form-status" style="text-align: center; margin-top: 16px; display: none;"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -1139,5 +1147,48 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  (function() {
+    var form = document.getElementById('trading-contact-form');
+    var btn = document.getElementById('trading-submit-btn');
+    var status = document.getElementById('trading-form-status');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(result) {
+        if (result.success) {
+          status.style.display = 'block';
+          status.style.color = '#16a34a';
+          status.textContent = 'Message sent successfully! We will get back to you soon.';
+          form.reset();
+        } else {
+          status.style.display = 'block';
+          status.style.color = '#dc2626';
+          status.textContent = 'Something went wrong. Please try again or email us directly.';
+        }
+      })
+      .catch(function() {
+        status.style.display = 'block';
+        status.style.color = '#dc2626';
+        status.textContent = 'Network error. Please check your connection and try again.';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
