@@ -22,13 +22,16 @@
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('active');
       mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      const isOpen = mobileMenu.classList.contains('active');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (nav) nav.classList.toggle('nav--menu-open', isOpen);
     });
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('active');
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
+        if (nav) nav.classList.remove('nav--menu-open');
       });
     });
   }

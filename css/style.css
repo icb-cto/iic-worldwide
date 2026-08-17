@@ -160,6 +160,7 @@ h4, .h4 {
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
 .grid-6 { grid-template-columns: repeat(6, 1fr); }
 .flex { display: flex; }
 .flex-center { align-items: center; }
@@ -210,6 +211,11 @@ h4, .h4 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 rgba(14, 36, 32, 0.1);
+}
+.nav--menu-open {
+  background: #FFFFFF;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 .nav__inner {
   max-width: var(--container);
@@ -644,6 +650,11 @@ h4, .h4 {
 .content-split--narrow-left {
   grid-template-columns: 2fr 3fr;
 }
+.content-split--chairman {
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
 
 /* Stats Row */
 .stats {
@@ -1060,9 +1071,10 @@ h4, .h4 {
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__visual { max-width: 500px; margin: 0 auto; }
   .hero { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
-  .content-split, .content-split--narrow-left { grid-template-columns: 1fr; gap: 40px; }
+  .content-split, .content-split--narrow-left, .content-split--chairman { grid-template-columns: 1fr; gap: 40px; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-5 { grid-template-columns: repeat(3, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .vertical-overview { grid-template-columns: 1fr; }
   .vertical-card { min-height: auto; padding: 40px; }
@@ -1082,6 +1094,7 @@ h4, .h4 {
   .nav__cta--desktop { display: none; }
   .nav__toggle { display: flex; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
   .grid-6 { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: 1fr 1fr; }
   .hero__subtitle { max-width: 100%; }
@@ -1099,6 +1112,7 @@ h4, .h4 {
 
 @media (max-width: 480px) {
   :root { --section-pad: 48px; --section-pad-sm: 36px; }
+  .grid-5 { grid-template-columns: 1fr; }
   .grid-6 { grid-template-columns: 1fr; }
   h1, .h1 { font-size: 32px; }
   h2, .h2 { font-size: 28px; }
